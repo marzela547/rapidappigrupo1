@@ -2,7 +2,8 @@ import axios from "axios";
 
 const options = {
   method: 'GET',
-  url: 'https://covid-19-data.p.rapidapi.com/totals',
+  url: 'https://covid-19-data.p.rapidapi.com/report/country/name',
+  params: {date: '2020-04-01', name: 'Honduras'},
   headers: {
     'x-rapidapi-key': process.env.REACT_APP_RAPIAPI_API_KEY,
     'x-rapidapi-host': process.env.REACT_APP_RAPIAPI_API_HOST
