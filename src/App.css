@@ -13,6 +13,29 @@
   }
 }
 
+.paises{
+        transform:scale(1.2);
+        -ms-transform:scale(1.2);
+        -moz-transform:scale(1.2);
+        -webkit-transform:scale(1.2);
+        -o-transform:scale(1.2);
+        -webkit-transition: all 500ms ease-in-out;
+        -moz-transition: all 500ms ease-in-out;
+        -ms-transition: all 500ms ease-in-out;
+        -o-transition: all 500ms ease-in-out;
+}
+
+.paises:hover{
+  -webkit-transform: scale(1.21);
+    -moz-transform: scale(1.212);
+    -o-transform: scale(1.212);
+    transform: scale(1.212);
+}
+
+.menu{
+  font-family: 'Dosis', sans-serif;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
