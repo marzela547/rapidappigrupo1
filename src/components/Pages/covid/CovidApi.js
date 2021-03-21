@@ -1,5 +1,5 @@
 import axios from "axios";
-const lugar={lugar};
+const lugar="Honduras";
 const options = {
   method: 'GET',
   url: 'https://covid-19-data.p.rapidapi.com/country',

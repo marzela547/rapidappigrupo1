@@ -15,8 +15,9 @@
         "destination": "/index.html"
       }
     ],
-     "headers": [
+    "headers": [
       {"source": "/service-worker.js", "headers": [{"key": "Cache-Control", "value": "no-cache"}]}
     ]
   }
 }
+
