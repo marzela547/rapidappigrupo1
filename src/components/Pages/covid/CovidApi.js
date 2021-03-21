@@ -10,13 +10,13 @@ const options = {
   }
 };
 
-/*axios.request(options).then(function (response) {
+axios.request(options).then(function (response) {
 	console.log(response.data);
-  console.log(response.data.[0].country);
+  console.log(response.data[0].country);
 
 }).catch(function (error) {
 	console.error(error);
-});*/
+});
 
 export default (handler) => {
     axios.request(options).then(function (response){
