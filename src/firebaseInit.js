@@ -13,3 +13,16 @@ var config = {
 const fire = firebase.initializeApp(config);
 
 export default fire;
+
+
+/*
+agregar este archivo en un archivo .env con los valores correspondientes
+
+REACT_APP_APIKEY=
+REACT_APP_AUTHDOMAIN=
+REACT_APP_DATABASEURL=
+REACT_APP_PROJECTID=
+REACT_APP_STORAGEBUCKET=
+REACT_APP_MESSAGINGSENDERID=
+REACT_APP_APPID=
+*/
