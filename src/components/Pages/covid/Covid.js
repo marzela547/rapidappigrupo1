@@ -1,7 +1,10 @@
-import {useEffect, useEffect0} from 'react';
+import {useState,useEffect} from 'react';
 import getCountryCodeTotal from './CovidApi';
+import lugar from './CovidApi';
+import firebaseSDK from '../../../firebaseInit';
 
 function Covid (){
+    lugar="Honduras";
     useEffect(
         function(){
             getCountryCodeTotal(
@@ -9,15 +12,28 @@ function Covid (){
                     if(err)
                         console.log(err);
                     else
+                    {
                         console.log(data);
+                        console.log(data.[0].country);
+                        console.log(data.[0].lastChange);
+                       
+                    }
+                        
                 }
             )
         }
-        ,[]
+        
     );
+    console.log(dato);
     return(
-         <h1>COVID PAGE</h1>
+        <section>
+            <h1>COVID PAGE</h1>
+            
+        </section>
+         
     );
+    
+    
 }
 
 export default Covid;
