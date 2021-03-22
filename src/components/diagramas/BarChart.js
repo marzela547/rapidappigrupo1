@@ -8,7 +8,7 @@ import {
 
 function BarChart() {
   return (
-    <section className="container my-5 mx-auto max-w-lg h-96 flex flex-col justify-end border-gray-700 border-2">
+    <section className="container mb-12 mx-auto max-w-lg h-96 flex flex-col justify-end ">
       <section className="maincontainer flex justify-between w-full h-full">
         {__DATA__.map(({ distance, colors }, i) => {
             return (

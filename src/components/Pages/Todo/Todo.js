@@ -59,11 +59,6 @@ function Todo(){
       id : new Date().getTime()
     };
     firebaseSDK.database().ref("todos").push(newToo);
-    /*let newTodos = todoData.todos;
-    newTodos.push(newToo);
-
-    setTodoData({todos:newTodos, newTodo: ""});
-    */
   }
   const doneHandler = (id)=>{
     const ref = firebaseSDK.database().ref("todos")
@@ -74,14 +69,6 @@ function Todo(){
     fbTodo.update({
       "completed": !lcTodo.completed
     });
-    // const newTodos = todoData.todos.map((o)=>{
-    //   if(o.id == id){
-    //     o.completed = !o.completed;
-    //   }
-    //   return o;
-    // });
-
-    // setTodoData({...todoData, todos:newTodos});
   };
   const deleteHandler = (id)=>{
     const ref = firebaseSDK.database().ref("todos")
@@ -90,13 +77,9 @@ function Todo(){
       return o.fb_id === id;
     });
     fbTodo.remove();
-    // const newTodos = todoData.todos.filter((o) => {
-    //   return o.id !==id;
-    // });
 
-    // setTodoData({ ...todoData, todos: newTodos });
   }
-  // const tmpTodos = todoData.todos.map( (o)=>{return JSON.stringify(o)} ).join(" | ");
+
   return (
     <section className="w-4/5 mt-28 lg:mt-20 left-1/2 rounded-lg transform -translate-x-1/2 absolute box-border lg:text-2xl">
      <NewTodo
