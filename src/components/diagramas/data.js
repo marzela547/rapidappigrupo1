@@ -1,15 +1,15 @@
 export const __DATA__ = [
     {
       distance: 13,
-      colors: ["#ffd847", "#e0a106"]
+      colors: ["#FDE68A", "#e0a106"]
     },
     {
       distance: 20,
-      colors: ["#ff47ab", "#e0064e"]
+      colors: ["#FCA5A5", "#B91C1C"]
     },
     {
       distance: 16,
-      colors: ["#add9c0", "#1da890"]
+      colors: ["#E0F2FE", "#0369A1"]
     },
     {
       distance: 30,
@@ -17,14 +17,14 @@ export const __DATA__ = [
     },
     {
       distance: 22,
-      colors: ["#d9c1ad", "#714511"]
+      colors: ["#E9D5FF", "#A78BFA"]
     },
     {
       distance: 24,
-      colors: ["#cbd9ad", "#7ca81d"]
+      colors: ['#FECDD3',"#FB7185"]
     },
     {
       distance: 10,
-      colors: ["#d9c1ad", "#714511"]
+      colors: ["#CCFBF1", "#0D9488"]
     }
   ];
