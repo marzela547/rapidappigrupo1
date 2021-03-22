@@ -1,5 +1,4 @@
 //import {useEffect} from 'react';
-//import getCountryCodeTotal from './CovidApi';
 import axios from "axios";
 import firebaseSDK from '../../../firebaseInit';
 
