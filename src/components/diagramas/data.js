@@ -1,3 +1,6 @@
+import Covid from '../Pages/covid/Covid';
+
+
 export const __DATA__ = [
     {
       distance: 13,
