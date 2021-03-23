@@ -5,9 +5,9 @@ import firebaseSDK from '../../../firebaseInit';
 const bordes = "#6B7280";
 let paises = {};
 
-function Covid (){
+function Covid ({setData}){
 
-    const valorPais = (pais, e)=>{
+ const valorPais = (pais, e)=>{
 
     const options = {
         method: 'GET',
@@ -21,8 +21,9 @@ function Covid (){
 
       axios.request(options).then(function (response) {
         console.log(response.data);
-         return response.data;
-        const onAddNew = (e)=>{
+        setData(response.data);
+        return response.data;
+       /* const onAddNew = (e)=>{
             let transfePaises = {
               country: response.data[0].country,
               confirmed: response.data[0].confirmed,
@@ -30,7 +31,7 @@ function Covid (){
               deaths: response.data[0].deaths
             };
             firebaseSDK.database().ref("Paises").push(transfePaises);
-          }
+          }*/
 
 
       }).catch(function (error) {
@@ -42,40 +43,7 @@ function Covid (){
 console.log(paises);
     return(
         <section className="box-border overflow-hidden">
-            <section className=" ml-8 min-w-full box-border overflow-hidden">
-                <h1 className="">Estadísticas sobre el Covid19 en Centroamérica</h1>
-                <section className=" min-w-full m-2 flex justify-between pr-24">
-                    <section className="bg-blue-300 text-white w-1/5 rounded-lg overflow-hidden">
-                        <section className="w-full ml-2 mt-2 flex justify-between">
-                            <h2 className=" w-auto text-lg bold">150 <br></br>nuevas contribuciones</h2>
-                            <p className=" w-min text-6xl mr-2 my-auto text-blue-800 text-opacity-30"><ion-icon name="hand-right-sharp"></ion-icon></p>
-                        </section>
-                        <div className="w-full mt-9 bg-blue-500 opacity-50 hover:opacity-100"><p className="w-40 self-center m-auto text-lg">Más información <ion-icon name="add-circle-outline" ></ion-icon></p></div>
-                    </section>
-                    <section className="bg-green-400 text-white w-1/5 rounded-lg overflow-hidden">
-                        <section className="w-full ml-2 mt-2 flex justify-between">
-                            <h2 className="w-auto text-lg bold">24 <br></br>actualizaciones diarias</h2>
-                            <p className="w-min text-6xl mr-2 my-auto text-green-800 text-opacity-30"><ion-icon name="notifications-sharp"></ion-icon></p>
-                        </section>
-                        <div className=" bg-green-600 opacity-50 hover:opacity-100 w-full mt-9"><p className="w-40 self-center m-auto text-lg">Más información <ion-icon name="add-circle-outline"></ion-icon></p></div>
-                    </section>
-                    <section className="bg-yellow-300 text-white w-1/5 overflow-hidden rounded-lg">
-                        <section className="w-full ml-2 mt-2  flex justify-between">
-                            <h2 className="  w-auto text-lg bold">4 400 <br></br> nuevos registros</h2>
-                            <p className="w-min text-6xl mr-3 my-auto text-yellow-600 text-opacity-30"><ion-icon name="person-add-sharp"></ion-icon></p>
-                        </section>
-                        <div className="bg-yellow-600 opacity-50 hover:opacity-100 w-full mt-9"><p className="w-40 self-center m-auto text-lg">Más información <ion-icon name="add-circle-outline"></ion-icon></p></div>
-                    </section>
-                    <section className="bg-red-600 w-1/5 text-white overflow-hidden rounded-lg">
-                        <section className="w-full ml-2 mt-2 flex justify-between">
-                            <h2 className=" w-auto text-lg bold">10 000 <br></br> nuevos visitantes</h2>
-                            <p className="w-min text-6xl mr-2 my-auto text-red-900 text-opacity-30"><ion-icon name="eye-sharp"></ion-icon></p>
-                        </section>
-                        <div className="bg-red-800 opacity-50 hover:opacity-100 w-full mt-9"><p className="w-40 self-center m-auto text-lg">Más información <ion-icon name="add-circle-outline"></ion-icon></p></div>
-                    </section>
-                </section>
-            </section>
-            <section className="bg-gray-500 w-2/3 justify-items-center shadow-lg my-4 pt-8 mx-auto rounded-lg box-border">
+            <section className="bg-gray-500 w-max justify-items-center shadow-lg my-4 pt-8 mx-auto rounded-lg box-border">
                 <h2 className="text-2xl text-white mt-2 mx-4 bold">Centroamérica</h2>
                 <svg className="m-auto" height="370" width="430">
                     <path onClick={(e)=>valorPais("Guatemala", e)} className="paises hover:text-yellow-400 fill-current text-gray-100" strokeWidth="1" stroke={bordes} id="GT" d="m 48.07,47.62 c -1.92,1.19 -4.41,0.77 -6.5,0.23 -1.31,-0.34 -2.57,-0.89 -3.89,-1.18 -1.7,-0.37 -3.19,0 -4.53,0.87 -2.14,1.38 -3.62,2.06 -6.31,2.06 -1.36,0 -3,-0.35 -4.28,0.19 -1.24,0.52 -1.99,2.28 -2.88,3.18 -2.76,2.81 -4.23,5.71 -5.94,9.08 -1.33,2.63 -4.29,4.67 -4.84,7.6 -0.52,2.82 1.25,5.87 -0.9,8.39 -1.38,1.62 -3.21,3.86 -3.42,5.92 -0.26,2.63 2.55,2.06 4.49,1.96 0.82,-0.04 1.99,-0.14 2.75,0.21 1.23,0.55 1.3,2.02 2.6,2.6 1.57,0.69 3.13,1.23 4.19,2.53 0.99,1.22 1.49,2.74 2.99,3.59 0.9,0.51 1.84,0.34 2.69,1.03 1.05,0.86 1.62,2.07 3.22,2.16 2.54,0.14 4.21,0.22 6.29,1.63 0.68,0.46 1.18,0.48 1.99,0.74 1.34,0.43 2.69,1.02 4.13,1.1 1.48,0.09 2.63,-0.84 4.03,-0.78 1.82,0.07 3.53,0.66 5.39,0.65 1.5,-0.01 2.22,0.22 3.56,0.69 1.32,0.46 2.79,0.36 4.18,0.44 3,0.18 20.5,1.45 23.36,0.31 1.97,-0.79 25.16,-42.63 25.31,-43.92 0.31,-2.77 -2.13,-2.32 -4.46,-2.61 -1.51,-0.19 -2.86,-0.53 -4.39,-0.6 -1.65,-0.07 -3.7,-0.09 -5.1,-0.85 -0.11,-0.06 -0.36,-1.81 -0.44,-2.06 -0.25,-0.73 -0.36,-0.9 -1,-1.4 -1.13,-0.88 -2.42,-1.61 -2.66,-3.03 -0.32,-1.9 0.22,-38.35 -0.91,-39.88 -0.66,-0.91 -1.78,-1.37 -2.87,-1.77 -0.52,-0.19 -1.13,-0.52 -1.68,-0.63 -0.61,-0.12 -1.35,0.09 -1.96,0.17 H 39.6 V 17.2 c -2.47,0 -4.94,0 -7.41,0 -0.83,0 -1.67,0 -2.5,0 -0.58,0 -1.6,-0.18 -2.14,-0.02 -1.18,0.36 0.6,1.13 1.01,1.31 1.32,0.6 2.17,1.3 3.28,2.14 0.87,0.66 1.98,0.95 2.95,1.46 0.89,0.47 1.5,1.14 2.07,1.9 0.78,1.04 1.91,1.94 2.96,2.76 1.05,0.81 2.18,1.51 3.14,2.42 1.19,1.13 2.34,2.29 3.56,3.39 1.43,1.3 2.78,2.54 3.43,4.29 0.73,1.96 1.1,4.01 0.61,6.05 -0.42,1.74 -0.7,3.57 -2.5,4.71 z"></path>

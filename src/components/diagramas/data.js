@@ -3,7 +3,7 @@ import Covid from '../Pages/covid/Covid';
 
 export const __DATA__ = [
     {
-      distance: 13,
+      distance: 100,
       colors: ["#FDE68A", "#e0a106"]
     },
     {
