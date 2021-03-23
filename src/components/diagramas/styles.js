@@ -13,7 +13,11 @@ export const Chart = css`
 `;
 
 export const Number = styled.span`
-  font-size: 1.5rem;
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+  font-size: 1rem;
   text-align: center;
   color: ${(props) => props.color};
 `;

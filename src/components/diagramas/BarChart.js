@@ -26,18 +26,18 @@ function BarChart({apiData}) {
     });
   }
   return (
-    <section className="container mb-12  max-w-lg h-96 flex flex-col justify-end bg-white rounded-lg ">
-      <section className="maincontainer flex justify-between w-full h-full">
+    <section className="container mb-12 w-5/6  lg:max-w-lg h-96 m-auto flex flex-col justify-end bg-white rounded-lg ">
+      <section className="maincontainer flex justify-between lg:w-full h-full">
         {datos.map(({ label, y, colors }, i) => {
             return (
-              <section className="flex flex-col justify-end items-center" key={i}>
-                <Number color={colors[1]}>{(y/suma)*100} {label} </Number>
-                <MakeBar height={100} colors={colors}/>
+              <section className="flex flex-col justify-end items-center sm:w-3/4 " key={i}>
+                <Number className="sm:text-sm" color={colors[1]}>{((y/suma)*100).toFixed()} % {label} </Number>
+                <MakeBar height={((y/suma)*100).toFixed()} colors={colors}/>
               </section>
             );
           })}
       </section>
-      <BlackLine />
+      <BlackLine className="sm:w-3/4"/>
     </section>
   );
 }

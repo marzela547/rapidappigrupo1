@@ -18,7 +18,7 @@ function App() {
       <section className="box-border overflow-hidden">
         <BrandHeader></BrandHeader>
         <DatosExtra></DatosExtra>
-        <section className="flex justify-around my-auto">
+        <section className="col justify-around my-auto">
           <Covid setData={setAppiData}></Covid>
           <BarChart apiData={appState.data}></BarChart>
         </section>
